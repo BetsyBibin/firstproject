@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <title>CALCULATOR</title>
+</head>
+<body>
+    <h1 style="text-align:center; background-color:violet;color:aquamarine;font-size:50px;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif"></h1>
+    <h2 style="text-align:center;color:brown;font-size:30px">CALCULATOR</h2>
+    <div style="text-align:center;">
+     <form action="{% url 'calc' %}" method="post">
+       {% csrf_token %}
+       <center>
+        <label style="color: green;" for="num1">FIRST NUMBER</label><br><br>
+        <input style="width:50% ; border-color:violet;text-align:center; "type="text" name="num1"><br><br>
+        <label style="color: green;" for="num2">SECOND NUMBER</label><br><br>
+        <input style="width:50% ; border-color:violet;text-align:center; "type="text" name="num2"><br><br>
+        <select name="opr">
+            <option> SELECT OPERATION</option>
+            <option value="+">ADDITION(+)</option>
+            <option value="-">SUBTRACTION(-)</option>
+            <option value="*">MULTIPLICATION(*)</option>
+            <option value="/">DIVISION(/)</option>
+        </select><br><br>
+        <button style="background-color: purple;color:white;" class="btn" type="submit">CALCULATE</button><br><br>
+        <input style="width: 50%;border-color:violet;text-align:center;" type="text" value="{{ result }}"><br><br>
+       </center>
+     </form>   
+    </div>
+</body>
+</html>
